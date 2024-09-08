@@ -45,17 +45,16 @@ The architecture is designed as a serverless single-page application (SPA) lever
 
 ## **Prompt Engineering Techniques**
 
-- **Word Choice**: Selecting the most appropriate and specific words to make the prompt more precise and contextually relevant.
-- **Phrasing**: Structuring the prompt in a way that aligns with the desired output and model capabilities.
-- **Providing Additional Information**: Including necessary details or context in the prompt to guide the model toward generating accurate responses.
-- **Providing Examples**: Giving examples within the prompt to set a pattern or context for the model to follow.
-- **Generate Recommendations Based on Metadata**: Creating recommendations or outputs that are specifically tailored based on provided metadata or structured data.
+- **One-shot**: One-shot learning is when you provide an AI with just one example or instruction to help it understand the task.
+- **Few-shot**: Few-shot learning involves giving the AI a few examples (more than one but not too many) to help it understand the task better.
+- **Chain of Thought (CoT)**: Chain of Thought (CoT) is a technique where you encourage the AI to explain its thinking step-by-step..
+- **Tree of Thought (ToT)**: Tree of Thought (ToT) is a technique where the AI explores multiple possible paths or solutions before deciding on the best one. 
 
 ## **Code Implementation**
 
 ### **Import Libraries and Create an Amazon Bedrock Client**
 
-This step initializes the necessary libraries and creates an Amazon Bedrock client to interact with various foundation models.
+- This step initializes the necessary libraries and creates an Amazon Bedrock client to interact with various foundation models.
 
 ```python
 ## Code Cell 1 ##
@@ -70,8 +69,8 @@ bedrock_runtime = boto3.client('bedrock-runtime')
 bedrock.list_foundation_models()
 ```
 
-Create a Helper Function for Calling Amazon Bedrock
-A helper function is defined to facilitate calling Amazon Bedrock models with different parameters depending on the model type.
+### **Create a Helper Function for Calling Amazon Bedrock**
+- A helper function is defined to facilitate calling Amazon Bedrock models with different parameters depending on the model type.
 
 ```
 def call_bedrock(modelId, prompt_data): 
