@@ -84,7 +84,7 @@ bedrock.list_foundation_models()
 ### Create a Help Function for Calling Amazon Bedrock
 - A helper function is defined to facilitate calling Amazon Bedrock models with different parameters depending on the model type.
 
-## Code Cell 2 ##
+## Code Cell 2 
 
 def call_bedrock(modelId, prompt_data): 
     if 'amazon' in modelId:
@@ -132,7 +132,7 @@ def call_bedrock(modelId, prompt_data):
         response = response_body.get('completions')[0].get('data').get('text')
         
     return response, latency
-
+##
 
 ### Use Cases with Code Examples
 1. Generate Recommendations Based on Metadata
