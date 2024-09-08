@@ -56,7 +56,10 @@ The architecture is designed as a serverless single-page application (SPA) lever
    - Search for and select Amazon Bedrock from the services list.
 
 3. **Request Access**
-   - Follow the instructions to request access to Amazon Titan FM. You may need to fill out a form or contact AWS support if access is restricted.
+   - Follow the instructions to request access to Amazon Titan FM.
+  
+![Request Access to Amazon Titan FM](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/Amazon%20Bedrock%20-%20FMs.png?raw=true)
+
 
 ## 2. Explore Bedrock Text Playground
 
@@ -72,10 +75,15 @@ The architecture is designed as a serverless single-page application (SPA) lever
 4. **Use Sample Prompt**
    - Enter a sample prompt to generate output and evaluate the results.
 
+![Explore Bedrock Text Playground](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/Bedrock%20-%20Text%20Playground%20.png?raw=true)
+
+
 ## 3. Setup in SageMaker Studio
 
 1. **Open SageMaker Studio**
    - Navigate to SageMaker Studio from the AWS Management Console.
+  
+![Setup in SageMaker Studio](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/SageMaker%20Studio.png?raw=true)
 
 2. **Open a Terminal**
    - Launch a terminal in SageMaker Studio.
@@ -87,6 +95,30 @@ The architecture is designed as a serverless single-page application (SPA) lever
    # Upload HTML Files
    aws s3 cp /path/to/your/html-files s3://your-bucket-name --recursive
 
+![Setup in SageMaker Studio](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/SageMaker%20Studio%20-%20Terminal.png?raw=true)
+
+![Setup in SageMaker Studio](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/SageMaker%20Studio%20-%20Terminal%202.png?raw=true)
+
+## 4. Create Lambda Function
+
+1. **Write Lambda Function Code: Create a Lambda function to invoke Amazon Bedrock FM**
+   - Deploy Lambda Function: Use the AWS CLI or console to deploy the function.
+   - Grant Permissions: Ensure the Lambda function has the necessary permissions to access Amazon Bedrock.
+
+![Create Lambda Function](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/Lambda%20Function%20-%20Invoke%20Bedrock.png?raw=true)
+
+
+## 4. Configure CloudFront for SPA Access
+1. **Create CloudFront Distribution**
+   - Open CloudFront: Go to the CloudFront console.
+   - Create Distribution: Set up a new distribution.
+   - Configure Settings: Point to the S3 bucket where your HTML files are stored.
+
+2. **Access SPA**
+   - Obtain CloudFront Domain: Retrieve the CloudFront distribution domain name.
+   - Provide Prompt Inputs: Access your Single Page Application (SPA) using the CloudFront domain and enter prompt inputs.
+
+![Configure CloudFront](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/CloudFront-Distributions%20Domain%20.png?raw=true)
 
 
 ## **Prompt Engineering Techniques**
@@ -271,7 +303,6 @@ display(HTML(response))
 
 ```
 
-
 # **Testing and Validation**
 
 1. **Unit Testing**:  
@@ -285,3 +316,15 @@ display(HTML(response))
 3. **User Acceptance Testing (UAT)**:  
    - Perform testing with actual end-users to gather feedback and ensure that the application meets customer requirements and provides an optimal user experience.
 
+
+# **Output**
+
+![Output](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/Prompt%20Enginnering%20WIth%20Bedrock%20-%20Output%20.png?raw=true)
+
+![Output](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/Prompt%20Enginnering%20WIth%20Bedrock%20-%20Output%202.png?raw=true)
+
+
+
+## Author
+
+- Kireeti Chennuru | www.linkedin.com/in/kireeti-chennuru
