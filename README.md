@@ -8,22 +8,14 @@ This project demonstrates a serverless single-page web application (SPA) designe
 Refer to the architecture diagram visual representation of the setup and illustrates the various AWS services involved in this project
 
 ![Architecture Diagram](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/Cloud%20Architecture.png?raw=true)
-### **Skills Demonstrated**
-- Amazon Simple Storage Service (S3)
-- Amazon CloudFront
-- Amazon S3
-- Amazon API Gateway
-- AWS Lambda
-- Amazon Bedrock
-- Amazon SageMaker Studio
-- Amazon SageMaker Notebook
+
 
 ## **Architecture Design**
 
 ### **Architecture Type:**  
 The architecture is designed as a serverless single-page application (SPA) leveraging multiple AWS managed services for efficient content delivery, secure API management, and dynamic content generation. The solution is highly scalable, cost-effective, and optimized for low latency.
 
-### **Core Components:**
+## Architecture Diagram Core Aspects:
 
 1. **Amazon CloudFront**:  
    A highly distributed, fast, and secure content delivery network that serves as the entry point for customers accessing the application. CloudFront caches content to reduce latency and offload traffic from the origin S3 bucket, enhancing performance and reducing costs.
@@ -42,6 +34,16 @@ The architecture is designed as a serverless single-page application (SPA) lever
 
 6. **Amazon SageMaker Studio & Notebook**:  
    Used by data scientists to experiment with and refine prompt templates. The Studio and Notebook environments provide a fully managed, collaborative space for building, training, and deploying ML models.
+
+### **Skills Demonstrated**
+- Amazon Simple Storage Service (S3)
+- Amazon CloudFront
+- Amazon S3
+- Amazon API Gateway
+- AWS Lambda
+- Amazon Bedrock
+- Amazon SageMaker Studio
+- Amazon SageMaker Notebook
 
 
 ## **Prompt Engineering Techniques**
