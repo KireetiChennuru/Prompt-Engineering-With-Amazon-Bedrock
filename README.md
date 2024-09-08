@@ -153,7 +153,7 @@ Estimate Audience for TV Shows Based on Historical Data
    - Task: Complex reasoning
    - Prompt technique: Chain-of-thought (CoT)
    - Model: Amazon Titan
-   - 
+
 ```
 prompt_data ="""
 Human: Last week, three television channels had the following viewership data:
@@ -237,14 +237,6 @@ display(HTML(response))
    - Ensure seamless integration between all components, including CloudFront, S3, API Gateway, Lambda, Bedrock, and SageMaker Studio.
    - Validate end-to-end functionality by simulating customer requests and monitoring data flow through the architecture.
 
-3. **Performance Testing**:  
-   - Test the application's response times and scalability under different load conditions.
-   - Utilize Amazon CloudFront metrics and AWS X-Ray to analyze performance bottlenecks and optimize resource allocation.
-
-4. **Security Testing**:  
-   - Conduct a comprehensive security assessment to ensure that all components adhere to AWS security best practices.
-   - Validate API Gateway security configurations and access controls for Lambda functions and S3 buckets.
-
-5. **User Acceptance Testing (UAT)**:  
+3. **User Acceptance Testing (UAT)**:  
    - Perform testing with actual end-users to gather feedback and ensure that the application meets customer requirements and provides an optimal user experience.
 
