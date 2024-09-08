@@ -135,37 +135,109 @@ def call_bedrock(modelId, prompt_data):
 
 
 
-## Prompt Engineering Techniques
-
 ### Use Cases with Code Examples
 1. Generate Recommendations Based on Metadata
 - Task: Text generation
 - Prompt technique: Zero-shot
 - Model: Amazon Titan
 
+## Code Cell 3 ##
+
+prompt_data ="""
+Human:
+Generate a list of 10 recommended TV shows to watch, considering the information in the <metadata></metadata> XML tags. Include a very brief description of each recommendation.
+
+<metadata>
+Country is UK
+Age range between 20-30
+Shows must be about sports
+</metadata>
+
+Assistant:
+"""
+
+response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
+print(response, "\n\n", "Inference time:", latency)
 
 
+2. Estimate Audience for TV Shows Based on Historical Data
+
+- Task: Complex reasoning
+- Prompt technique: Chain-of-thought (CoT)
+- Model: Amazon Titan
+
+## Code Cell 4 ##
+
+prompt_data ="""
+Human: Last week, three television channels had the following viewership data:
+- Monday: SportsTV 6500, NewsTV 3200, EntertainmentTV 4150
+- Tuesday: SportsTV 6400, NewsTV 3300, EntertainmentTV 4100
+- Wednesday: SportsTV 6300, NewsTV 3400, EntertainmentTV 4250
+
+Question: How many viewers can we expect next Friday on SportsTV?
+Answer: According to the numbers given, and without having more information, there is a daily decrease of 100 viewers for SportsTV.
+If we assume that this trend will continue for the next few days, we can expect 6200 viewers for the next day, which is Thursday, and
+therefore 6100 viewers for Friday.
+
+Question: How many viewers can we expect on Saturday for each of the three channels? Think step-by-step, and provide recommendations for increasing the viewers.
+Assistant:
+Answer:
+"""
+
+response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
+print(response, "\n\n", "Inference time:", latency)
 
 
+3. Create a Question-Answering Assistant
+- Task: Question answering with a dialogue Assistant (no memory)
+- Prompt technique: Few-shot
+- Model: Amazon Titan
+
+## Code Cell 5 ##
+
+prompt_data ="""
+Context: The shows available are as follows
+1. Circus, showing at the Plaza venue, assigned seating, live at 8pm on weekends
+2. Concert, showing at the Main Theater, assigned seating, live at 10pm everyday
+3. Basketball tricks, showing at the Sports venue, standing seating, live at 5pm on weekdays
+
+Instruction: Answer any questions about the available shows. If you don't know the answer, say 'Apologies, I don't have the answer for that. Please contact our team by phone.'
+
+Assistant: Welcome to Entertainment Tonight, how can I help you?
+Human: Hi, I would like to know what shows are available please.
+Assistant: Of course. Right now, we have the Circus, the Concert, and the Basketball tricks shows.
+Human: Thank you. I would like to know when and where those shows are available please.
+Assistant:
+"""
+
+response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
+print(response, "\n\n", "Inference time:", latency)
 
 
+4. Create Splash Pages that Describe Upcoming Events
+- Task: Code generation
+- Prompt technique: Zero-shot
+- Model: Amazon Titan
+
+## Code Cell 6 ##
+
+prompt_data ="""
+An upcoming music concert is presented by the company, Music Promotions.
+The event targets a young audience, age range between 18 and 40.
+The event will occur in the Royal Music Theater.
+Seating is assigned and tickets can be purchased through the Music Promotions website.
+The event is a music concert performed by the band, Super Rockers.
+The event will occur on June 30, 2023, and doors will open at 20:00.
+
+Based on the information provided above, generate the HTML code for an attractive splash page to promote the event.
+"""
+
+response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
+print(response, "\n\n", "Inference time:", latency)
+from IPython.display import display, HTML
+display(HTML(response))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 ## **Testing and Validation**
 
