@@ -260,23 +260,3 @@ display(HTML(response))
 5. **User Acceptance Testing (UAT)**:  
    - Perform testing with actual end-users to gather feedback and ensure that the application meets customer requirements and provides an optimal user experience.
 
-## **Project Repository Structure**
-
-```plaintext
-/Prompt-Engineering-With-Bedrock
-│
-├── README.md                  # Project overview and documentation
-├── architecture-diagram.png   # AWS Architecture Diagram
-├── src/
-│   ├── api/                   # API Gateway definitions and configurations
-│   ├── lambda/                # Lambda function code for prompt processing
-│   ├── s3/                    # Static content for the SPA
-│   └── notebooks/             # SageMaker Studio Notebook files
-│
-├── test/
-│   ├── unit/                  # Unit test scripts and cases
-│   └── integration/           # Integration test scripts and cases
-│
-├── scripts/
-│   └── deployment/            # Scripts for deploying resources to AWS
-└── LICENSE                    # License information
