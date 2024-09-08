@@ -43,6 +43,123 @@ The architecture is designed as a serverless single-page application (SPA) lever
 6. **Amazon SageMaker Studio & Notebook**:  
    Used by data scientists to experiment with and refine prompt templates. The Studio and Notebook environments provide a fully managed, collaborative space for building, training, and deploying ML models.
 
+
+## Prompt Engineering Techniques
+
+### Word Choice
+Selecting the most appropriate and specific words to make the prompt more precise and contextually relevant.
+
+### Phrasing
+Structuring the prompt in a way that aligns with the desired output and model capabilities.
+
+### Providing Additional Information
+Including necessary details or context in the prompt to guide the model toward generating accurate responses.
+
+### Providing Examples
+Giving examples within the prompt to set a pattern or context for the model to follow.
+
+### Generate Recommendations Based on Metadata
+Creating recommendations or outputs that are specifically tailored based on provided metadata or structured data.
+
+## Code Implementation
+
+### Import Libraries and Create an Amazon Bedrock Client
+
+This step initializes the necessary libraries and creates an Amazon Bedrock client to interact with various foundation models.
+
+```python
+## Code Cell 1 ##
+
+import boto3
+import json
+import csv
+from datetime import datetime
+
+bedrock = boto3.client('bedrock')
+bedrock_runtime = boto3.client('bedrock-runtime')
+bedrock.list_foundation_models()
+
+
+
+### Create a Help Function for Calling Amazon Bedrock
+- A helper function is defined to facilitate calling Amazon Bedrock models with different parameters depending on the model type.
+
+## Code Cell 2 ##
+
+def call_bedrock(modelId, prompt_data): 
+    if 'amazon' in modelId:
+        body = json.dumps({
+            "inputText": prompt_data,
+            "textGenerationConfig":
+            {
+                "maxTokenCount": 1024,
+                "stopSequences":[],
+                "temperature":0.7,
+                "topP":0.9
+            }
+        })
+    elif 'meta' in modelId:
+        body = json.dumps({
+            "prompt": prompt_data,
+            "max_tokens_to_sample": 4096,
+            "stop_sequences":[],
+            "temperature":0,
+            "top_p":0.9
+        })
+    elif 'mistral' in modelId:
+        body = json.dumps({
+            "prompt": prompt_data,
+            "max_tokens_to_sample": 4096,
+            "stop_sequences":[],
+            "temperature":0,
+            "top_p":0.9
+        })
+        print('Parameter model must be one of Titan, Lama, or Mixtral')
+        return
+    accept = 'application/json'
+    contentType = 'application/json'
+
+    before = datetime.now()
+    response = bedrock_runtime.invoke_model(body=body, modelId=modelId, accept=accept, contentType=contentType)
+    latency = (datetime.now() - before)
+    response_body = json.loads(response.get('body').read())
+
+    if 'amazon' in modelId:
+        response = response_body.get('results')[0].get('outputText')
+    elif 'meta' in modelId:
+        response = response_body.get('completion')
+    elif 'mistral' in modelId:
+        response = response_body.get('completions')[0].get('data').get('text')
+        
+    return response, latency
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
 ## **Testing and Validation**
 
 1. **Unit Testing**:  
