@@ -35,7 +35,7 @@ The architecture is designed as a serverless single-page application (SPA) lever
 6. **Amazon SageMaker Studio & Notebook**:  
    Used by data scientists to experiment with and refine prompt templates. The Studio and Notebook environments provide a fully managed, collaborative space for building, training, and deploying ML models.
 
-### **Skills Demonstrated**
+### **Services Used**
 - Amazon Simple Storage Service (S3)
 - Amazon CloudFront
 - Amazon S3
