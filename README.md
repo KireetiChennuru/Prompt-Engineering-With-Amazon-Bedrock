@@ -123,7 +123,8 @@ def call_bedrock(modelId, prompt_data):
 ```
 
 ### Use Cases with Code Examples
-1. Generate Recommendations Based on Metadata
+
+#### 1. Generate Recommendations Based on Metadata
    - Task: Text generation
    - Prompt technique: Zero-shot
    - Model: Amazon Titan
@@ -148,13 +149,12 @@ Estimate Audience for TV Shows Based on Historical Data
 ```
 
 
-2. Estimate Audience for TV Shows Based on Historical Data
+#### 2. Estimate Audience for TV Shows Based on Historical Data
    - Task: Complex reasoning
    - Prompt technique: Chain-of-thought (CoT)
    - Model: Amazon Titan
-
-## Code Cell 4 ##
-
+   - 
+```
 prompt_data ="""
 Human: Last week, three television channels had the following viewership data:
 - Monday: SportsTV 6500, NewsTV 3200, EntertainmentTV 4150
@@ -173,14 +173,15 @@ Answer:
 
 response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
 print(response, "\n\n", "Inference time:", latency)
-Create a Question-Answering Assistant
-Task: Question answering with a dialogue Assistant (no memory)
-Prompt technique: Few-shot
-Model: Amazon Titan
-python
-Copy code
-## Code Cell 5 ##
+```
 
+
+
+#### 3. Create a Question-Answering Assistant
+   - Task: Question answering with a dialogue Assistant (no memory)
+   - Prompt technique: Few-shot
+   - Model: Amazon Titan
+```
 prompt_data ="""
 Context: The shows available are as follows
 1. Circus, showing at the Plaza venue, assigned seating, live at 8pm on weekends
@@ -198,14 +199,15 @@ Assistant:
 
 response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
 print(response, "\n\n", "Inference time:", latency)
-Create Splash Pages that Describe Upcoming Events
-Task: Code generation
-Prompt technique: Zero-shot
-Model: Amazon Titan
-python
-Copy code
-## Code Cell 6 ##
 
+```
+
+#### 4. Create Splash Pages that Describe Upcoming Events
+   - Task: Code generation
+   - Prompt technique: Zero-shot
+   - Model: Amazon Titan
+
+```
 prompt_data ="""
 An upcoming music concert is presented by the company, Music Promotions.
 The event targets a young audience, age range between 18 and 40.
@@ -221,6 +223,8 @@ response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
 print(response, "\n\n", "Inference time:", latency)
 from IPython.display import display, HTML
 display(HTML(response))
+
+```
 
 
 # **Testing and Validation**
