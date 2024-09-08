@@ -52,11 +52,8 @@ The architecture is designed as a serverless single-page application (SPA) lever
 1. **Log in to AWS Management Console**
    - Go to the [AWS Management Console](https://aws.amazon.com/console/).
 
-2. **Navigate to Amazon Bedrock**
-   - Search for and select Amazon Bedrock from the services list.
-
-3. **Request Access**
-   - Follow the instructions to request access to Amazon Titan FM.
+2. **Request Acces**
+   - Search for and select Amazon Bedrock from the services list and request access to Amazon Titan FM.
   
 ![Request Access to Amazon Titan FM](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/Amazon%20Bedrock%20-%20FMs.png?raw=true)
 
