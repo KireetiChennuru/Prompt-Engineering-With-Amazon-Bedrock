@@ -105,7 +105,7 @@ The architecture is designed as a serverless single-page application (SPA) lever
 ![Create Lambda Function](https://github.com/KireetiChennuru/Prompt-Engineering-With-Amazon-Bedrock/blob/main/Project_Files/Lambda%20Function%20-%20Invoke%20Bedrock.png?raw=true)
 
 
-## 4. Configure CloudFront for SPA Access
+## 5. Configure CloudFront for SPA Access
 1. **Create CloudFront Distribution**
    - Open CloudFront: Go to the CloudFront console.
    - Create Distribution: Set up a new distribution.
