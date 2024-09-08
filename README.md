@@ -4,9 +4,11 @@
 
 This project demonstrates a serverless single-page web application (SPA) designed to provide personalized prompt recommendations powered by Generative AI. The architecture utilizes various AWS services to ensure scalability, low latency, and secure content delivery while maintaining a serverless infrastructure.
 
-### **Platform and Resources**
-- **AWS Training and Certification**
+### Architecture Diagram
+Refer to the architecture diagram visual representation of the setup and illustrates the various AWS services involved in this project
 
+![Architecture Diagram](https://github.com/KireetiChennuru/Fine-Tuning-Large-Language-Models-LLMs-on-Amazon-SageMaker/blob/main/Project_Files/Architecture%20Diagram%202.jpeg?raw=true
+)
 ### **Skills Demonstrated**
 - Amazon Simple Storage Service (S3)
 - Amazon CloudFront
