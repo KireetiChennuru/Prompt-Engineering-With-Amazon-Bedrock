@@ -124,9 +124,9 @@ def call_bedrock(modelId, prompt_data):
 
 ### Use Cases with Code Examples
 1. Generate Recommendations Based on Metadata
-- Task: Text generation
-- Prompt technique: Zero-shot
-- Model: Amazon Titan
+   - Task: Text generation
+   - Prompt technique: Zero-shot
+   - Model: Amazon Titan
 
 ```
 prompt_data ="""
@@ -148,10 +148,10 @@ Estimate Audience for TV Shows Based on Historical Data
 ```
 
 
-
-Task: Complex reasoning
-Prompt technique: Chain-of-thought (CoT)
-Model: Amazon Titan
+2. Estimate Audience for TV Shows Based on Historical Data
+   - Task: Complex reasoning
+   - Prompt technique: Chain-of-thought (CoT)
+   - Model: Amazon Titan
 
 ## Code Cell 4 ##
 
