@@ -68,7 +68,7 @@ from datetime import datetime
 bedrock = boto3.client('bedrock')
 bedrock_runtime = boto3.client('bedrock-runtime')
 bedrock.list_foundation_models()
-
+```
 
 # **Testing and Validation**
 
