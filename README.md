@@ -45,6 +45,49 @@ The architecture is designed as a serverless single-page application (SPA) lever
 - Amazon SageMaker Studio
 - Amazon SageMaker Notebook
 
+# Project Setup Guide
+
+## 1. Request Access to Amazon Titan FM
+
+1. **Log in to AWS Management Console**
+   - Go to the [AWS Management Console](https://aws.amazon.com/console/).
+
+2. **Navigate to Amazon Bedrock**
+   - Search for and select Amazon Bedrock from the services list.
+
+3. **Request Access**
+   - Follow the instructions to request access to Amazon Titan FM. You may need to fill out a form or contact AWS support if access is restricted.
+
+## 2. Explore Bedrock Text Playground
+
+1. **Open Amazon Bedrock**
+   - Go to the Amazon Bedrock console.
+
+2. **Access Text Playground**
+   - Locate and open the Bedrock Text Playground.
+
+3. **Select Model**
+   - Choose "Amazon Titan Express" from the list of available models.
+
+4. **Use Sample Prompt**
+   - Enter a sample prompt to generate output and evaluate the results.
+
+## 3. Setup in SageMaker Studio
+
+1. **Open SageMaker Studio**
+   - Navigate to SageMaker Studio from the AWS Management Console.
+
+2. **Open a Terminal**
+   - Launch a terminal in SageMaker Studio.
+
+   ```bash
+   # Create S3 Bucket
+   aws s3 mb s3://your-bucket-name
+
+   # Upload HTML Files
+   aws s3 cp /path/to/your/html-files s3://your-bucket-name --recursive
+
+
 
 ## **Prompt Engineering Techniques**
 
