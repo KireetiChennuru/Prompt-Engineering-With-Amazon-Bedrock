@@ -134,6 +134,12 @@ def call_bedrock(modelId, prompt_data):
     return response, latency
 
 
+### Use Cases with Code Examples
+1. Generate Recommendations Based on Metadata
+
+- Task: Text generation
+- Prompt technique: Zero-shot
+- Model: Amazon Titan
 
 
 
@@ -157,8 +163,7 @@ def call_bedrock(modelId, prompt_data):
 
 
 
-
-   
+  
 
 ## **Testing and Validation**
 
