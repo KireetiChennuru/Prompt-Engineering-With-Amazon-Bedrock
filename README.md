@@ -1,4 +1,3 @@
-
 # **Prompt Engineering with Amazon Bedrock**
 
 ## **Overview**
@@ -44,26 +43,17 @@ The architecture is designed as a serverless single-page application (SPA) lever
    Used by data scientists to experiment with and refine prompt templates. The Studio and Notebook environments provide a fully managed, collaborative space for building, training, and deploying ML models.
 
 
-## Prompt Engineering Techniques
+## **Prompt Engineering Techniques**
 
-### Word Choice
-Selecting the most appropriate and specific words to make the prompt more precise and contextually relevant.
+- **Word Choice**: Selecting the most appropriate and specific words to make the prompt more precise and contextually relevant.
+- **Phrasing**: Structuring the prompt in a way that aligns with the desired output and model capabilities.
+- **Providing Additional Information**: Including necessary details or context in the prompt to guide the model toward generating accurate responses.
+- **Providing Examples**: Giving examples within the prompt to set a pattern or context for the model to follow.
+- **Generate Recommendations Based on Metadata**: Creating recommendations or outputs that are specifically tailored based on provided metadata or structured data.
 
-### Phrasing
-Structuring the prompt in a way that aligns with the desired output and model capabilities.
+## **Code Implementation**
 
-### Providing Additional Information
-Including necessary details or context in the prompt to guide the model toward generating accurate responses.
-
-### Providing Examples
-Giving examples within the prompt to set a pattern or context for the model to follow.
-
-### Generate Recommendations Based on Metadata
-Creating recommendations or outputs that are specifically tailored based on provided metadata or structured data.
-
-## Code Implementation
-
-### Import Libraries and Create an Amazon Bedrock Client
+### **Import Libraries and Create an Amazon Bedrock Client**
 
 This step initializes the necessary libraries and creates an Amazon Bedrock client to interact with various foundation models.
 
@@ -81,9 +71,11 @@ bedrock.list_foundation_models()
 
 
 
-### Create a Help Function for Calling Amazon Bedrock
-- A helper function is defined to facilitate calling Amazon Bedrock models with different parameters depending on the model type.
+Create a Helper Function for Calling Amazon Bedrock
+A helper function is defined to facilitate calling Amazon Bedrock models with different parameters depending on the model type.
 
+python
+Copy code
 ## Code Cell 2 ##
 
 def call_bedrock(modelId, prompt_data): 
@@ -132,15 +124,13 @@ def call_bedrock(modelId, prompt_data):
         response = response_body.get('completions')[0].get('data').get('text')
         
     return response, latency
-
-
-
-### Use Cases with Code Examples
-1. Generate Recommendations Based on Metadata
-- Task: Text generation
-- Prompt technique: Zero-shot
-- Model: Amazon Titan
-
+Use Cases with Code Examples
+Generate Recommendations Based on Metadata
+Task: Text generation
+Prompt technique: Zero-shot
+Model: Amazon Titan
+python
+Copy code
 ## Code Cell 3 ##
 
 prompt_data ="""
@@ -158,14 +148,12 @@ Assistant:
 
 response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
 print(response, "\n\n", "Inference time:", latency)
-
-
-2. Estimate Audience for TV Shows Based on Historical Data
-
-- Task: Complex reasoning
-- Prompt technique: Chain-of-thought (CoT)
-- Model: Amazon Titan
-
+Estimate Audience for TV Shows Based on Historical Data
+Task: Complex reasoning
+Prompt technique: Chain-of-thought (CoT)
+Model: Amazon Titan
+python
+Copy code
 ## Code Cell 4 ##
 
 prompt_data ="""
@@ -186,13 +174,12 @@ Answer:
 
 response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
 print(response, "\n\n", "Inference time:", latency)
-
-
-3. Create a Question-Answering Assistant
-- Task: Question answering with a dialogue Assistant (no memory)
-- Prompt technique: Few-shot
-- Model: Amazon Titan
-
+Create a Question-Answering Assistant
+Task: Question answering with a dialogue Assistant (no memory)
+Prompt technique: Few-shot
+Model: Amazon Titan
+python
+Copy code
 ## Code Cell 5 ##
 
 prompt_data ="""
@@ -212,13 +199,12 @@ Assistant:
 
 response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
 print(response, "\n\n", "Inference time:", latency)
-
-
-4. Create Splash Pages that Describe Upcoming Events
-- Task: Code generation
-- Prompt technique: Zero-shot
-- Model: Amazon Titan
-
+Create Splash Pages that Describe Upcoming Events
+Task: Code generation
+Prompt technique: Zero-shot
+Model: Amazon Titan
+python
+Copy code
 ## Code Cell 6 ##
 
 prompt_data ="""
@@ -236,8 +222,6 @@ response, latency = call_bedrock('amazon.titan-text-premier-v1:0', prompt_data)
 print(response, "\n\n", "Inference time:", latency)
 from IPython.display import display, HTML
 display(HTML(response))
-
-
 
 ## **Testing and Validation**
 
