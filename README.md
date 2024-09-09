@@ -131,7 +131,7 @@ The architecture is designed as a serverless single-page application (SPA) lever
 
 - This step initializes the necessary libraries and creates an Amazon Bedrock client to interact with various foundation models.
 
-```
+```python
 import boto3
 import json
 import csv
