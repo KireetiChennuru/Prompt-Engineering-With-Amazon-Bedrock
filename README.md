@@ -145,7 +145,7 @@ bedrock.list_foundation_models()
 ### **Create a Helper Function for Calling Amazon Bedrock**
 - A helper function is defined to facilitate calling Amazon Bedrock models with different parameters depending on the model type.
 
-```
+```python
 def call_bedrock(modelId, prompt_data): 
     if 'amazon' in modelId:
         body = json.dumps({
@@ -201,7 +201,7 @@ def call_bedrock(modelId, prompt_data):
    - Prompt technique: Zero-shot
    - Model: Amazon Titan
 
-```
+```python
 prompt_data ="""
 Human:
 Generate a list of 10 recommended TV shows to watch, considering the information in the <metadata></metadata> XML tags. Include a very brief description of each recommendation.
@@ -226,7 +226,7 @@ Estimate Audience for TV Shows Based on Historical Data
    - Prompt technique: Chain-of-thought (CoT)
    - Model: Amazon Titan
 
-```
+```python
 prompt_data ="""
 Human: Last week, three television channels had the following viewership data:
 - Monday: SportsTV 6500, NewsTV 3200, EntertainmentTV 4150
@@ -253,7 +253,7 @@ print(response, "\n\n", "Inference time:", latency)
    - Task: Question answering with a dialogue Assistant (no memory)
    - Prompt technique: Few-shot
    - Model: Amazon Titan
-```
+```python
 prompt_data ="""
 Context: The shows available are as follows
 1. Circus, showing at the Plaza venue, assigned seating, live at 8pm on weekends
@@ -279,7 +279,7 @@ print(response, "\n\n", "Inference time:", latency)
    - Prompt technique: Zero-shot
    - Model: Amazon Titan
 
-```
+```python
 prompt_data ="""
 An upcoming music concert is presented by the company, Music Promotions.
 The event targets a young audience, age range between 18 and 40.
